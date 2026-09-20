@@ -15,21 +15,10 @@
     return ctx;
   }
 
-  function midiToFreq(midi) {
-    return 440 * Math.pow(2, (midi - 69) / 12);
-  }
-
   /**
-   * Play a note by MIDI number.
+   * Play a tone at a given frequency in Hz.
    * opts: { when=0, duration=0.8, wave='triangle', volume=0.5 }
    */
-  function playMidi(midi, opts) {
-    const o = opts || {};
-    const freq = midiToFreq(midi);
-    const wave = o.wave || "triangle";
-    playTone(freq, { when: o.when || 0, duration: o.duration || 0.8, wave: wave, volume: o.volume == null ? 0.5 : o.volume });
-  }
-
   function playTone(freq, opts) {
     const o = opts || {};
     const c = ensureContext();
@@ -59,5 +48,5 @@
     ensureContext();
   }
 
-  window.BassAudio = { unlock, playMidi, playTone, midiToFreq };
+  window.BassAudio = { unlock, playTone };
 })();

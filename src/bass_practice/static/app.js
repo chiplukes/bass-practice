@@ -109,7 +109,7 @@
       fcRender(card);
       await sleep(parseFloat($("#fc-seconds").value) * 1000);
       if (!fcRunning) break;
-      BassAudio.playMidi(card.midi, { duration: 1.0 });
+      BassAudio.playTone(card.frequency, { duration: 1.0 });
       await sleep(400);
     }
   }
@@ -142,7 +142,7 @@
     $("#song-display").textContent = step.display;
     $("#song-progress").textContent = `step ${songIdx + 1} / ${song.steps.length}`;
     if (step.kind === "note") {
-      BassAudio.playMidi(step.midi, { duration: Math.max(0.4, songStepDuration()) });
+      BassAudio.playTone(step.frequency, { duration: Math.max(0.4, songStepDuration()) });
     }
   }
 
@@ -323,7 +323,7 @@
   }
 
   async function loadEarRoots() {
-    const res = await api("/api/notes?start=E1&end=A2");
+    const res = await api("/api/notes?start=E2&end=A3");
     const sel = $("#ear-root");
     sel.innerHTML = "";
     res.notes.forEach((n) => {
@@ -377,8 +377,8 @@
   function earPlay() {
     if (!exercise) return;
     const q = exercise.questions[earIdx];
-    BassAudio.playMidi(q.low_midi, { duration: 0.6 });
-    setTimeout(() => BassAudio.playMidi(q.high_midi, { duration: 0.6 }), 550);
+    BassAudio.playTone(q.low_frequency, { duration: 0.6 });
+    setTimeout(() => BassAudio.playTone(q.high_frequency, { duration: 0.6 }), 550);
   }
 
   $("#ear-new").addEventListener("click", async () => {

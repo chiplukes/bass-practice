@@ -2,15 +2,15 @@
   "name": "Root-Fifth Groove",
   "description": "A simple I-V alternating groove with rests, using note names.",
   "bpm": 100,
-  "tuning": ["E1", "A1", "D2", "G2"],
+  "tuning": ["E2", "A2", "D3", "G3"],
   "steps": [
-    { "type": "note", "name": "E1" },
-    { "type": "rest" },
-    { "type": "note", "name": "B1" },
-    { "type": "rest" },
-    { "type": "note", "name": "A1" },
-    { "type": "rest" },
     { "type": "note", "name": "E2" },
+    { "type": "rest" },
+    { "type": "note", "name": "B2" },
+    { "type": "rest" },
+    { "type": "note", "name": "A2" },
+    { "type": "rest" },
+    { "type": "note", "name": "E3" },
     { "type": "rest" }
   ]
 }

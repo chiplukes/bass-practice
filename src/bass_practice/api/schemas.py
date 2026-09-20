@@ -80,6 +80,8 @@ class IntervalQuestionInfo(BaseModel):
     high_midi: int
     low_note: str
     high_note: str
+    low_frequency: float
+    high_frequency: float
 
 
 class EarExerciseResponse(BaseModel):

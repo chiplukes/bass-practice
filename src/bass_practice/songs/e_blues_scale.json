@@ -1,0 +1,14 @@
+{
+  "name": "E Blues Scale",
+  "description": "E blues scale (E G A Bb D), from E2.",
+  "bpm": 100,
+  "tuning": ["E2", "A2", "D3", "G3"],
+  "steps": [
+    { "type": "note", "name": "E2" },
+    { "type": "note", "name": "G2" },
+    { "type": "note", "name": "A2" },
+    { "type": "note", "name": "Bb2" },
+    { "type": "note", "name": "D3" },
+    { "type": "note", "name": "E3" }
+  ]
+}

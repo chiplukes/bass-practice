@@ -1,0 +1,16 @@
+{
+  "name": "G Major Scale (one octave)",
+  "description": "G major scale ascending, from G2.",
+  "bpm": 100,
+  "tuning": ["E2", "A2", "D3", "G3"],
+  "steps": [
+    { "type": "note", "name": "G2" },
+    { "type": "note", "name": "A2" },
+    { "type": "note", "name": "B2" },
+    { "type": "note", "name": "C3" },
+    { "type": "note", "name": "D3" },
+    { "type": "note", "name": "E3" },
+    { "type": "note", "name": "F#3" },
+    { "type": "note", "name": "G3" }
+  ]
+}

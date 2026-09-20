@@ -2,12 +2,20 @@
 
 Everything here is pure Python (no web or audio dependencies) so it can be
 unit-tested independently of the FastAPI layer and the browser frontend.
+
+The bass guitar is a transposing instrument: it is written one octave higher
+than it sounds. Throughout the domain, ``Note.midi`` and note names refer to
+*written* pitch (so they match standard bass notation). Frequencies and
+``Note.sounding_midi`` refer to the pitch actually heard, one octave lower.
 """
 
 from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+
+# Bass guitar sounds one octave (12 semitones) below written pitch.
+SOUNDING_OFFSET = -12
 
 # Pitch classes by natural letter name (C=0 .. B=11).
 _PITCH_CLASS: dict[str, int] = {
@@ -51,7 +59,8 @@ class NoteError(ValueError):
 class Note:
     """A specific pitch, canonicalized to sharp spelling.
 
-    ``midi`` is the MIDI note number (C-1 == 0, middle C == 60).
+    ``midi`` is the *written* MIDI note number (C-1 == 0, middle C == 60).
+    Use :attr:`sounding_midi` for the pitch the bass actually plays.
     """
 
     letter: str
@@ -77,14 +86,25 @@ class Note:
         return f"{_SHARP_NAMES[self.pitch_class]}{self.octave}"
 
     @property
+    def sounding_midi(self) -> int:
+        """MIDI number of the pitch actually heard (one octave below written)."""
+        return self.midi + SOUNDING_OFFSET
+
+    @property
     def frequency(self) -> float:
-        return midi_to_frequency(self.midi)
+        """Sounding frequency in Hz (the bass sounds an octave below written)."""
+        return midi_to_frequency(self.sounding_midi)
 
     def transposed(self, semitones: int) -> Note:
         return midi_to_note(self.midi + semitones)
 
     def __str__(self) -> str:
         return self.name
+
+
+def written_to_sounding_midi(midi: int) -> int:
+    """Convert a written MIDI note number to its sounding pitch (bass transposition)."""
+    return midi + SOUNDING_OFFSET
 
 
 def parse_note(text: str) -> Note:

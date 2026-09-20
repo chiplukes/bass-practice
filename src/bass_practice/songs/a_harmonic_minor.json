@@ -1,0 +1,16 @@
+{
+  "name": "A Harmonic Minor Scale (one octave)",
+  "description": "A harmonic minor scale ascending, from A2.",
+  "bpm": 100,
+  "tuning": ["E2", "A2", "D3", "G3"],
+  "steps": [
+    { "type": "note", "name": "A2" },
+    { "type": "note", "name": "B2" },
+    { "type": "note", "name": "C3" },
+    { "type": "note", "name": "D3" },
+    { "type": "note", "name": "E3" },
+    { "type": "note", "name": "F3" },
+    { "type": "note", "name": "G#3" },
+    { "type": "note", "name": "A3" }
+  ]
+}

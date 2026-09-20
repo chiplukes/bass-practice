@@ -6,8 +6,9 @@ from dataclasses import dataclass
 
 from .notes import Note, midi_to_note, note_to_midi
 
-# Standard 4-string bass tuning, low to high (E1 == MIDI 28).
-STANDARD_TUNING: tuple[str, ...] = ("E1", "A1", "D2", "G2")
+# Standard 4-string bass tuning, low to high, in *written* pitch (the bass
+# sounds one octave lower). Open E is written as E2.
+STANDARD_TUNING: tuple[str, ...] = ("E2", "A2", "D3", "G3")
 
 
 @dataclass(frozen=True)

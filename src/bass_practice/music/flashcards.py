@@ -6,7 +6,7 @@ import random
 from dataclasses import dataclass
 
 from .fretboard import Fretboard
-from .notes import midi_to_frequency, midi_to_note, note_to_midi
+from .notes import midi_to_note, note_to_midi
 
 
 @dataclass(frozen=True)
@@ -49,7 +49,7 @@ def generate_deck(
             Flashcard(
                 name=note.name,
                 midi=midi,
-                frequency=midi_to_frequency(midi),
+                frequency=note.frequency,
                 string=string,
                 fret=fret,
                 positions=tuple(positions),

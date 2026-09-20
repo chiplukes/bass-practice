@@ -9,7 +9,6 @@ from ..music import (
     Fretboard,
     generate_deck,
     generate_exercise,
-    midi_to_frequency,
     midi_to_note,
     note_to_midi,
     validate_interval,
@@ -30,16 +29,16 @@ router = APIRouter(tags=["music"])
 
 
 @router.get("/notes", response_model=NotesResponse)
-def list_notes(start: str = "E1", end: str = "G2") -> NotesResponse:
-    """List every note (with MIDI and frequency) in an inclusive pitch range."""
+def list_notes(start: str = "E2", end: str = "G3") -> NotesResponse:
+    """List every note (with MIDI and sounding frequency) in an inclusive pitch range."""
     lo = note_to_midi(start)
     hi = note_to_midi(end)
     if hi < lo:
         lo, hi = hi, lo
-    notes = [
-        NoteInfo(name=midi_to_note(midi).name, midi=midi, frequency=midi_to_frequency(midi))
-        for midi in range(lo, hi + 1)
-    ]
+    notes = []
+    for midi in range(lo, hi + 1):
+        note = midi_to_note(midi)
+        notes.append(NoteInfo(name=note.name, midi=note.midi, frequency=note.frequency))
     return NotesResponse(notes=notes)
 
 
@@ -50,7 +49,7 @@ def list_intervals() -> list[str]:
 
 
 @router.get("/flashcards", response_model=FlashcardsResponse)
-def flashcards(start: str = "E1", end: str = "G2", max_fret: int = 12) -> FlashcardsResponse:
+def flashcards(start: str = "E2", end: str = "G3", max_fret: int = 12) -> FlashcardsResponse:
     """Generate a flashcard deck: each card is a note plus its fretboard positions."""
     cards = generate_deck(start, end, max_fret=max_fret)
     return FlashcardsResponse(
@@ -106,6 +105,8 @@ def ear_exercise(req: EarExerciseRequest) -> EarExerciseResponse:
                 high_midi=q.high_midi,
                 low_note=q.low_note,
                 high_note=q.high_note,
+                low_frequency=q.low_frequency,
+                high_frequency=q.high_frequency,
             )
             for q in questions
         ],

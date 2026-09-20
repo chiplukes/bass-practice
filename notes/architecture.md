@@ -84,3 +84,8 @@ FastAPI, which is what keeps it unit-testable in isolation.
 - **Sharp-spelling canonicalization.** All notes are stored canonically in sharp
   spelling (`Bb1` == `A#1`). This keeps equality and hashing trivial; a future
   enhancement could preserve the user's preferred spelling for display.
+- **Bass transposition.** The bass is a transposing instrument: it is written an
+  octave higher than it sounds. The domain stores *written* pitch (`Note.midi`,
+  `Note.name`, the tuning) so it matches standard bass notation; `Note.frequency`
+  and `Note.sounding_midi` are the sounding pitch (written minus 12 semitones).
+  The frontend always plays `frequency` (never `midi`), so audio stays correct.

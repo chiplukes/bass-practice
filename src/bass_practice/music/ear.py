@@ -6,7 +6,7 @@ import random
 from dataclasses import dataclass
 
 from .intervals import validate_interval
-from .notes import midi_to_note
+from .notes import midi_to_frequency, midi_to_note, written_to_sounding_midi
 
 
 @dataclass(frozen=True)
@@ -19,6 +19,8 @@ class IntervalQuestion:
     high_midi: int
     low_note: str
     high_note: str
+    low_frequency: float
+    high_frequency: float
 
 
 def generate_exercise(
@@ -59,6 +61,8 @@ def generate_exercise(
                 high_midi=high_midi,
                 low_note=low_note.name,
                 high_note=high_note.name,
+                low_frequency=midi_to_frequency(written_to_sounding_midi(low_midi)),
+                high_frequency=midi_to_frequency(written_to_sounding_midi(high_midi)),
             )
         )
     return questions

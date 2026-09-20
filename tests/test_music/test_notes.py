@@ -45,7 +45,14 @@ def test_midi_to_frequency() -> None:
 
 def test_midi_to_frequency_matches_note() -> None:
     note = parse_note("E2")
-    assert note.frequency == pytest.approx(midi_to_frequency(note.midi))
+    assert note.frequency == pytest.approx(midi_to_frequency(note.sounding_midi))
+
+
+def test_bass_sounds_an_octave_below_written() -> None:
+    note = parse_note("E2")
+    assert note.sounding_midi == note.midi - 12
+    # Open E is written as E2 but sounds at ~41 Hz (E1).
+    assert note.frequency == pytest.approx(41.203, abs=0.01)
 
 
 def test_transpose() -> None:

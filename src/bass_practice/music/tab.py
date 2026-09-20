@@ -15,7 +15,7 @@ from typing import Any
 from .fretboard import Fretboard
 from .notes import parse_note
 
-DEFAULT_TUNING: tuple[str, ...] = ("E1", "A1", "D2", "G2")
+DEFAULT_TUNING: tuple[str, ...] = ("E2", "A2", "D3", "G3")
 
 
 class SongError(ValueError):

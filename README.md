@@ -45,14 +45,18 @@ Songs are JSON documents in `src/bass_practice/songs/`. A step is either a note
 {
   "name": "Example",
   "bpm": 100,
-  "tuning": ["E1", "A1", "D2", "G2"],
+  "tuning": ["E2", "A2", "D3", "G3"],
   "steps": [
     { "type": "note", "string": 0, "fret": 0 },
-    { "type": "note", "name": "A1" },
+    { "type": "note", "name": "A2" },
     { "type": "rest" }
   ]
 }
 ```
+
+Notes follow standard bass notation: the bass is a transposing instrument, so
+pitches are written an octave higher than they sound (open E is written `E2` but
+sounds at ~41 Hz).
 
 ## License
 

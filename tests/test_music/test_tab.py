@@ -17,35 +17,35 @@ def test_resolve_open_strings() -> None:
     }
     steps = resolve_song(song)
     assert [s.display for s in steps] == ["E0", "A0"]
-    assert [s.note_name for s in steps] == ["E1", "A1"]
-    assert steps[0].midi == 28
+    assert [s.note_name for s in steps] == ["E2", "A2"]
+    assert steps[0].midi == 40
 
 
 def test_resolve_note_names_and_rests() -> None:
     song = {
         "name": "Groove",
         "steps": [
-            {"type": "note", "name": "E1"},
+            {"type": "note", "name": "E2"},
             {"type": "rest"},
-            {"type": "note", "name": "B1"},
+            {"type": "note", "name": "B2"},
         ],
     }
     steps = resolve_song(song)
     assert [s.kind for s in steps] == ["note", "rest", "note"]
-    assert steps[0].display == "E1"
+    assert steps[0].display == "E2"
     assert steps[1].display == "rest"
     assert steps[1].midi is None
-    assert steps[2].midi == 35
+    assert steps[2].midi == 47
 
 
 def test_custom_tuning() -> None:
     song = {
         "name": "Drop D",
-        "tuning": ["D1", "A1", "D2", "G2"],
+        "tuning": ["D2", "A2", "D3", "G3"],
         "steps": [{"type": "note", "string": 0, "fret": 0}],
     }
     steps = resolve_song(song)
-    assert steps[0].note_name == "D1"
+    assert steps[0].note_name == "D2"
 
 
 def test_validate_song_missing_name() -> None:

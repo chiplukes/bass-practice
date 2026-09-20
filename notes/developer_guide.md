@@ -53,6 +53,8 @@ becomes the song ID.
 - Line length 120; format with `ruff format`.
 - Types are enforced with mypy for `src/bass_practice/` (tests are excluded).
 - Notes are canonicalized to sharp spelling internally.
+- Notes and `midi` are *written* bass pitch (an octave above sounding). The
+  frontend plays `frequency`, never `midi` — see `notes/architecture.md`.
 - Frontend has no build step; keep it plain JS, no frameworks, unless a feature
   clearly outgrows it (see roadmap).
 

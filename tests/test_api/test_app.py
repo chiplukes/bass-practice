@@ -16,17 +16,17 @@ def test_health() -> None:
 
 
 def test_notes_range() -> None:
-    res = client.get("/api/notes", params={"start": "E1", "end": "A1"})
+    res = client.get("/api/notes", params={"start": "E2", "end": "A2"})
     assert res.status_code == 200
     notes = res.json()["notes"]
-    assert [n["name"] for n in notes] == ["E1", "F1", "F#1", "G1", "G#1", "A1"]
+    assert [n["name"] for n in notes] == ["E2", "F2", "F#2", "G2", "G#2", "A2"]
     assert all(n["frequency"] > 0 for n in notes)
 
 
 def test_notes_reversed_range() -> None:
-    res = client.get("/api/notes", params={"start": "A1", "end": "E1"})
+    res = client.get("/api/notes", params={"start": "A2", "end": "E2"})
     notes = res.json()["notes"]
-    assert notes[0]["name"] == "E1"
+    assert notes[0]["name"] == "E2"
 
 
 def test_intervals() -> None:
@@ -36,10 +36,10 @@ def test_intervals() -> None:
 
 
 def test_flashcards() -> None:
-    res = client.get("/api/flashcards", params={"start": "E1", "end": "A1", "max_fret": 12})
+    res = client.get("/api/flashcards", params={"start": "E2", "end": "A2", "max_fret": 12})
     assert res.status_code == 200
     cards = res.json()["cards"]
-    assert [c["name"] for c in cards] == ["E1", "F1", "F#1", "G1", "G#1", "A1"]
+    assert [c["name"] for c in cards] == ["E2", "F2", "F#2", "G2", "G#2", "A2"]
     assert all(c["positions"] for c in cards)
     assert all(c["string"] >= 0 and c["fret"] >= 0 for c in cards)
 
@@ -48,7 +48,7 @@ def test_fretboard() -> None:
     res = client.get("/api/fretboard", params={"max_fret": 12})
     assert res.status_code == 200
     body = res.json()
-    assert body["layout"][0][0] == "E1"
+    assert body["layout"][0][0] == "E2"
     assert body["string_labels"] == ["E", "A", "D", "G"]
 
 
@@ -79,6 +79,7 @@ def test_ear_exercise() -> None:
     body = res.json()
     assert len(body["questions"]) == 4
     assert all(q["interval"] in {"perfect 5th", "major 3rd"} for q in body["questions"])
+    assert all(q["low_frequency"] > 0 and q["high_frequency"] > 0 for q in body["questions"])
 
 
 def test_ear_exercise_bad_interval() -> None:
