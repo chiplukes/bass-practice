@@ -35,6 +35,15 @@ def test_intervals() -> None:
     assert "perfect 5th" in res.json()
 
 
+def test_flashcards() -> None:
+    res = client.get("/api/flashcards", params={"start": "E1", "end": "A1", "max_fret": 12})
+    assert res.status_code == 200
+    cards = res.json()["cards"]
+    assert [c["name"] for c in cards] == ["E1", "F1", "F#1", "G1", "G#1", "A1"]
+    assert all(c["positions"] for c in cards)
+    assert all(c["string"] >= 0 and c["fret"] >= 0 for c in cards)
+
+
 def test_fretboard() -> None:
     res = client.get("/api/fretboard", params={"max_fret": 12})
     assert res.status_code == 200

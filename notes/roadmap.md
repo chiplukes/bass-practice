@@ -7,6 +7,9 @@
 - FastAPI app serving a JSON API and static frontend.
 - Frontend with four thin slices: flashcards, song player, fretboard trainer,
   ear trainer.
+- Flashcards display note name, tablature, and standard bass-clef notation
+  (VexFlow, vendored), each independently toggleable, plus an optional
+  fretboard helper that marks the note's positions.
 - Three bundled example songs.
 
 ## Near-term
@@ -14,8 +17,7 @@
 - **User songs directory.** Load songs from a local directory (env var or
   `--songs-dir`) in addition to bundled package data, so users can add their own
   songs without reinstalling.
-- **Flashcard modes.** Flash string/fret position (tab) in addition to note
-  names, and a "show then you must name it before playback" mode.
+- **Flashcard mode.** "Show then you must name it before playback" mode.
 - **Ear trainer direction.** Randomize ascending/descending per question.
 - **Scoring/persistence.** Persist fretboard and ear trainer scores locally.
 - **Real sample playback.** Optional sampled bass timbre layered on top of (or

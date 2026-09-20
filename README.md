@@ -3,7 +3,10 @@
 A locally-served web app for practicing bass guitar. Open it on any device on
 your network and practice with four tools:
 
-- **Flashcards** — a note is shown for a configurable time, then played.
+- **Flashcards** — a note is shown for a configurable time, then played. Each
+  card can display the note name, tablature, and/or standard bass-clef
+  notation (each independently toggleable), plus an optional fretboard that
+  marks the note's positions.
 - **Song player** — load a sequence of tabs and play through it at any speed.
 - **Fretboard trainer** — name the note, find it on the fretboard.
 - **Ear trainer** — identify intervals by ear.

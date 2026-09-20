@@ -56,21 +56,60 @@
   // ------------------------------------------------------------------
   const fcToggle = $("#fc-toggle");
   let fcRunning = false;
+  let fcCards = [];
+
+  function fcRender(card) {
+    const showNote = $("#fc-show-note").checked;
+    const showTab = $("#fc-show-tab").checked;
+    const showNotation = $("#fc-show-notation").checked;
+    const showFretboard = $("#fc-show-fretboard").checked;
+
+    $("#fc-note-name").style.display = showNote ? "" : "none";
+    $("#fc-notation").style.display = showNotation ? "" : "none";
+    $("#fc-tab").style.display = showTab ? "" : "none";
+    $("#fc-fretboard-helper").style.display = showFretboard ? "" : "none";
+
+    if (showNote) $("#fc-note-name").textContent = card.name;
+    if (showNotation) {
+      const el = $("#fc-notation");
+      el.innerHTML = "";
+      Notation.renderNote(el, card.name);
+    }
+    if (showTab) {
+      const el = $("#fc-tab");
+      el.innerHTML = "";
+      Notation.renderTab(el, card.string, card.fret);
+    }
+    if (showFretboard && fbLayout) {
+      const el = $("#fc-fretboard-helper");
+      el.innerHTML = "";
+      renderFretboardHelper(el, fbLayout, card.positions);
+    }
+  }
+
+  function fcRenderIdle() {
+    $("#fc-note-name").textContent = "Press Start";
+    $("#fc-note-name").style.display = "";
+    $("#fc-notation").innerHTML = "";
+    $("#fc-tab").innerHTML = "";
+    $("#fc-fretboard-helper").innerHTML = "";
+  }
 
   async function fcRun() {
     fcRunning = true;
     fcToggle.textContent = "Stop";
+    await Notation.ready;
     const [start, end] = $("#fc-range").value.split("|");
-    const res = await api(`/api/notes?start=${start}&end=${end}`);
-    const notes = shuffle(res.notes);
+    const res = await api(`/api/flashcards?start=${start}&end=${end}&max_fret=12`);
+    fcCards = shuffle(res.cards);
     let i = 0;
     while (fcRunning) {
-      const note = notes[i % notes.length];
+      const card = fcCards[i % fcCards.length];
       i++;
-      $("#fc-display").textContent = note.name;
+      fcRender(card);
       await sleep(parseFloat($("#fc-seconds").value) * 1000);
       if (!fcRunning) break;
-      BassAudio.playMidi(note.midi, { duration: 1.0 });
+      BassAudio.playMidi(card.midi, { duration: 1.0 });
       await sleep(400);
     }
   }
@@ -79,7 +118,7 @@
     if (fcRunning) {
       fcRunning = false;
       fcToggle.textContent = "Start";
-      $("#fc-display").textContent = "Press Start";
+      fcRenderIdle();
     } else {
       fcRun();
     }
@@ -172,13 +211,11 @@
     $("#fb-score").textContent = `${fbCorrect} / ${fbAttempts}`;
   }
 
-  function renderFretboard() {
-    const grid = $("#fb-grid");
-    grid.innerHTML = "";
+  function buildFretboardTable(layout, opts) {
     const table = document.createElement("table");
     const head = document.createElement("tr");
     head.appendChild(document.createElement("th"));
-    for (let fret = 0; fret <= fbLayout.max_fret; fret++) {
+    for (let fret = 0; fret <= layout.max_fret; fret++) {
       const th = document.createElement("th");
       th.textContent = fret === 0 ? "open" : String(fret);
       head.appendChild(th);
@@ -186,22 +223,43 @@
     table.appendChild(head);
 
     // Rows high string (G) on top to low string (E) on bottom.
-    for (let row = fbLayout.layout.length - 1; row >= 0; row--) {
+    for (let row = layout.layout.length - 1; row >= 0; row--) {
       const tr = document.createElement("tr");
       const label = document.createElement("th");
-      label.textContent = fbLayout.string_labels[row];
+      label.textContent = layout.string_labels[row];
       tr.appendChild(label);
-      for (let fret = 0; fret <= fbLayout.max_fret; fret++) {
+      for (let fret = 0; fret <= layout.max_fret; fret++) {
         const td = document.createElement("td");
         td.textContent = "\u00B7";
         td.dataset.string = String(row);
         td.dataset.fret = String(fret);
-        td.addEventListener("click", () => fbClick(row, fret, td));
+        if (opts && opts.onCellClick) {
+          td.addEventListener("click", () => opts.onCellClick(row, fret, td));
+        }
         tr.appendChild(td);
       }
       table.appendChild(tr);
     }
-    grid.appendChild(table);
+    return table;
+  }
+
+  function renderFretboard() {
+    const grid = $("#fb-grid");
+    grid.innerHTML = "";
+    grid.appendChild(buildFretboardTable(fbLayout, { onCellClick: fbClick }));
+  }
+
+  function renderFretboardHelper(container, layout, positions) {
+    const marked = new Set(positions.map((p) => `${p.string}:${p.fret}`));
+    const table = buildFretboardTable(layout, null);
+    table.querySelectorAll("td").forEach((td) => {
+      const key = `${td.dataset.string}:${td.dataset.fret}`;
+      if (marked.has(key)) {
+        td.classList.add("mark");
+        td.textContent = layout.layout[td.dataset.string][td.dataset.fret];
+      }
+    });
+    container.appendChild(table);
   }
 
   function fbNewNote() {

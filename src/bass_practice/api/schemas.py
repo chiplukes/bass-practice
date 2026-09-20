@@ -15,6 +15,24 @@ class NotesResponse(BaseModel):
     notes: list[NoteInfo]
 
 
+class PositionInfo(BaseModel):
+    string: int
+    fret: int
+
+
+class FlashcardInfo(BaseModel):
+    name: str
+    midi: int
+    frequency: float
+    string: int
+    fret: int
+    positions: list[PositionInfo]
+
+
+class FlashcardsResponse(BaseModel):
+    cards: list[FlashcardInfo]
+
+
 class StepInfo(BaseModel):
     kind: str
     display: str

@@ -36,17 +36,23 @@ src/bass_practice/
 │   ├── fretboard.py     # string/fret <-> note mapping
 │   ├── tab.py           # song JSON -> resolved playable steps
 │   ├── intervals.py     # interval name <-> semitones
-│   └── ear.py           # ear-training exercise generation
+│   ├── ear.py           # ear-training exercise generation
+│   └── flashcards.py    # note -> tab position + all fretboard positions
 ├── api/                 # FastAPI routers + Pydantic schemas
 │   ├── schemas.py       # request/response models
-│   ├── music.py         # /api/notes, /api/intervals, /api/fretboard, /api/ear/exercise
+│   ├── music.py         # /api/notes, /api/intervals, /api/flashcards, /api/fretboard, /api/ear/exercise
 │   └── songs.py         # /api/songs, /api/songs/{id}
 ├── songs/               # bundled song JSON documents
 └── static/              # frontend (served verbatim)
     ├── index.html
     ├── app.js           # views + controllers
     ├── audio.js         # Web Audio synthesizer
-    └── style.css
+    ├── notation.js      # VexFlow notation + custom tab rendering
+    ├── style.css
+    └── vendor/          # vendored third-party assets (offline)
+        ├── vexflow.js   # VexFlow 5 (music engraving)
+        ├── bravura.woff2
+        └── academico.woff2
 ```
 
 ## Data flow
@@ -71,6 +77,10 @@ FastAPI, which is what keeps it unit-testable in isolation.
   name or by string/fret, or rests) into `ResolvedStep` objects carrying
   `midi`, `frequency`, `note_name`, and a `display` label. The frontend never
   parses music notation.
+- **Vendored engraving.** Standard notation is rendered client-side with VexFlow
+  5, vendored under `static/vendor/` along with its fonts so the app works fully
+  offline. Tablature is a small custom renderer (four lines + a fret number) in
+  `notation.js`.
 - **Sharp-spelling canonicalization.** All notes are stored canonically in sharp
   spelling (`Bb1` == `A#1`). This keeps equality and hashing trivial; a future
   enhancement could preserve the user's preferred spelling for display.

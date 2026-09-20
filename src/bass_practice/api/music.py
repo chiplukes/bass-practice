@@ -7,6 +7,7 @@ from fastapi import APIRouter, HTTPException
 from ..music import (
     INTERVALS,
     Fretboard,
+    generate_deck,
     generate_exercise,
     midi_to_frequency,
     midi_to_note,
@@ -16,10 +17,13 @@ from ..music import (
 from .schemas import (
     EarExerciseRequest,
     EarExerciseResponse,
+    FlashcardInfo,
+    FlashcardsResponse,
     FretboardResponse,
     IntervalQuestionInfo,
     NoteInfo,
     NotesResponse,
+    PositionInfo,
 )
 
 router = APIRouter(tags=["music"])
@@ -43,6 +47,25 @@ def list_notes(start: str = "E1", end: str = "G2") -> NotesResponse:
 def list_intervals() -> list[str]:
     """List the supported ear-training interval names."""
     return list(INTERVALS)
+
+
+@router.get("/flashcards", response_model=FlashcardsResponse)
+def flashcards(start: str = "E1", end: str = "G2", max_fret: int = 12) -> FlashcardsResponse:
+    """Generate a flashcard deck: each card is a note plus its fretboard positions."""
+    cards = generate_deck(start, end, max_fret=max_fret)
+    return FlashcardsResponse(
+        cards=[
+            FlashcardInfo(
+                name=c.name,
+                midi=c.midi,
+                frequency=c.frequency,
+                string=c.string,
+                fret=c.fret,
+                positions=[PositionInfo(string=s, fret=f) for s, f in c.positions],
+            )
+            for c in cards
+        ]
+    )
 
 
 @router.get("/fretboard", response_model=FretboardResponse)

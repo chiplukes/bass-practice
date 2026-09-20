@@ -30,9 +30,18 @@
             <option value="E1|A2">Low (E1 - A2)</option>
           </select>
         </label>
+        <label><input id="fc-show-note" type="checkbox" checked /> note</label>
+        <label><input id="fc-show-tab" type="checkbox" checked /> tab</label>
+        <label><input id="fc-show-notation" type="checkbox" checked /> notation</label>
+        <label><input id="fc-show-fretboard" type="checkbox" /> fretboard</label>
         <button id="fc-toggle">Start</button>
       </div>
-      <div id="fc-display" class="card">Press Start</div>
+      <div class="fc-card">
+        <div id="fc-note-name" class="note-name"></div>
+        <div id="fc-notation"></div>
+        <div id="fc-tab"></div>
+        <div id="fc-fretboard-helper" class="fretboard"></div>
+      </div>
     </section>
 
     <section id="view-song" class="view">
@@ -93,7 +102,9 @@
     Served by bass-practice. Audio is synthesized in your browser.
   </footer>
 
+  <script src="/vendor/vexflow.js"></script>
   <script src="/audio.js"></script>
+  <script src="/notation.js"></script>
   <script src="/app.js"></script>
 </body>
 </html>

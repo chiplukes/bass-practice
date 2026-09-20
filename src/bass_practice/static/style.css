@@ -6,6 +6,17 @@
   --accent: #4f8cff;
   --hit: #2f9e6e;
   --miss: #c94f4f;
+  --mark: #e05a4e;
+}
+
+@font-face {
+  font-family: "Bravura";
+  src: url("/vendor/bravura.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Academico";
+  src: url("/vendor/academico.woff2") format("woff2");
 }
 
 * {
@@ -117,6 +128,67 @@ button:hover {
   min-height: 8rem;
 }
 
+.fc-card {
+  background: var(--panel);
+  border: 1px solid #2a2f3a;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  min-height: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.note-name {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.notation {
+  line-height: 0;
+}
+
+.notation svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.tab {
+  width: 180px;
+}
+
+.tab-row {
+  display: flex;
+  align-items: center;
+  height: 2.2rem;
+  border-bottom: 2px solid var(--muted);
+}
+
+.tab-string {
+  width: 1.6rem;
+  font-weight: 700;
+  color: var(--muted);
+  padding-right: 0.6rem;
+  text-align: right;
+}
+
+.tab-line {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.tab-fret {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
 .muted {
   color: var(--muted);
   font-size: 0.9rem;
@@ -151,6 +223,11 @@ button:hover {
 
 .fretboard td.miss {
   background: var(--miss);
+  color: #fff;
+}
+
+.fretboard td.mark {
+  background: var(--mark);
   color: #fff;
 }
 

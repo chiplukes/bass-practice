@@ -55,3 +55,19 @@ becomes the song ID.
 - Notes are canonicalized to sharp spelling internally.
 - Frontend has no build step; keep it plain JS, no frameworks, unless a feature
   clearly outgrows it (see roadmap).
+
+## VexFlow 5 gotchas
+
+`notation.js` renders standard notation with the vendored VexFlow 5 build. Two
+VexFlow 5 API details that differ from older VexFlow:
+
+- Notes must be drawn through a `Voice` + `Formatter` (drawing a `StaveNote`
+  directly throws `NoTickContext: Can't getAbsoluteX()`).
+- The `Voice` constructor takes camelCase options (`{ numBeats, beatValue }`);
+  the old snake_case keys (`num_beats`) are silently ignored and leave the voice
+  incomplete.
+- `StaveNote` needs `clef: "bass"` or it is positioned as treble.
+
+To iterate on the frontend headlessly, a browser is required; the project has no
+Playwright setup, but any Chromium can be pointed at a running server to capture
+`pageerror`/console output.
