@@ -1,0 +1,12 @@
+{
+  "name": "Open Strings",
+  "description": "The four open strings of a standard bass, low to high.",
+  "bpm": 90,
+  "tuning": ["E1", "A1", "D2", "G2"],
+  "steps": [
+    { "type": "note", "string": 0, "fret": 0 },
+    { "type": "note", "string": 1, "fret": 0 },
+    { "type": "note", "string": 2, "fret": 0 },
+    { "type": "note", "string": 3, "fret": 0 }
+  ]
+}

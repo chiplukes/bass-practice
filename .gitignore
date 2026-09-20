@@ -1,0 +1,17 @@
+.venv
+venv
+__pycache__/
+*.py[cod]
+*$py.class
+.eggs
+.pytest_cache
+.mypy_cache
+.ruff_cache
+*.egg-info
+.DS_Store
+dist
+build
+.coverage
+*.pickle
+.claude/
+.peovim/*

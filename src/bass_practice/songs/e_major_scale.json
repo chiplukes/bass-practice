@@ -1,0 +1,16 @@
+{
+  "name": "E Major Scale (one octave)",
+  "description": "E major scale ascending, starting on the open E string.",
+  "bpm": 100,
+  "tuning": ["E1", "A1", "D2", "G2"],
+  "steps": [
+    { "type": "note", "string": 0, "fret": 0 },
+    { "type": "note", "string": 0, "fret": 2 },
+    { "type": "note", "string": 0, "fret": 4 },
+    { "type": "note", "string": 1, "fret": 0 },
+    { "type": "note", "string": 1, "fret": 2 },
+    { "type": "note", "string": 1, "fret": 4 },
+    { "type": "note", "string": 1, "fret": 6 },
+    { "type": "note", "string": 1, "fret": 7 }
+  ]
+}
