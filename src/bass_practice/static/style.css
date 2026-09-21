@@ -228,9 +228,16 @@ button:hover {
   color: #55595f;
 }
 
+.study-card .fretboard th.mark,
 .study-card .fretboard td.mark {
   background: var(--mark);
   color: #fff;
+}
+
+.study-card .fretboard th.alt,
+.study-card .fretboard td.alt {
+  background: #d8dbe0;
+  color: #6a7280;
 }
 
 .muted {
@@ -246,9 +253,12 @@ button:hover {
 .fretboard th,
 .fretboard td {
   border: 1px solid #2a2f3a;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.6rem;
   text-align: center;
-  min-width: 2.4rem;
+  min-width: 3.75rem;
+  max-width: 3.75rem;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .fretboard td {
@@ -270,9 +280,20 @@ button:hover {
   color: #fff;
 }
 
+.fretboard th.mark,
 .fretboard td.mark {
   background: var(--mark);
   color: #fff;
+}
+
+.fretboard th.alt,
+.fretboard td.alt {
+  background: #2a2f3a;
+  color: #55595f;
+}
+
+.fretboard th[data-fret] {
+  cursor: pointer;
 }
 
 .intervals {

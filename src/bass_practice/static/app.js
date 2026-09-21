@@ -106,6 +106,7 @@
   const fcToggle = $("#fc-toggle");
   let fcRunning = false;
   let fcCards = [];
+  let fcToken = 0;
 
   function fcRender(card) {
     renderStudy({
@@ -126,6 +127,7 @@
   }
 
   async function fcRun() {
+    const token = ++fcToken;
     fcRunning = true;
     fcToggle.textContent = "Stop";
     await Notation.ready;
@@ -133,12 +135,13 @@
     const res = await api(`/api/flashcards?start=${start}&end=${end}&max_fret=12`);
     fcCards = shuffle(res.cards);
     let i = 0;
-    while (fcRunning) {
+    while (fcRunning && token === fcToken) {
       const card = fcCards[i % fcCards.length];
       i++;
       fcRender(card);
-      await sleep(parseFloat($("#fc-seconds").value) * 1000);
-      if (!fcRunning) break;
+      const secs = parseFloat($("#fc-seconds").value);
+      await sleep((Number.isFinite(secs) && secs > 0 ? secs : 2) * 1000);
+      if (!fcRunning || token !== fcToken) break;
       BassAudio.playTone(card.frequency, { duration: 1.0 });
       await sleep(400);
     }
@@ -147,6 +150,7 @@
   fcToggle.addEventListener("click", () => {
     if (fcRunning) {
       fcRunning = false;
+      fcToken++;
       fcToggle.textContent = "Start";
       fcRenderIdle();
     } else {
@@ -172,7 +176,7 @@
     $("#song-play").textContent = playing ? "Pause" : "Play";
   }
 
-  function songRenderStep() {
+  function songRenderStep(play = true) {
     const step = song.steps[songIdx];
     const positions = step.notes
       .filter((n) => n.string != null && n.fret != null)
@@ -185,8 +189,10 @@
       show: studyShow("song"),
     });
     $("#song-progress").textContent = `step ${songIdx + 1} / ${song.steps.length}`;
-    const duration = Math.max(0.4, songStepDuration());
-    step.notes.forEach((n) => BassAudio.playTone(n.frequency, { duration }));
+    if (play) {
+      const duration = Math.max(0.4, songStepDuration());
+      step.notes.forEach((n) => BassAudio.playTone(n.frequency, { duration }));
+    }
   }
 
   async function songLoop() {
@@ -234,6 +240,13 @@
     songRenderStep();
   });
 
+  // View toggles take effect immediately on the current step.
+  ["note", "tab", "notation", "fretboard"].forEach((k) => {
+    $(`#song-show-${k}`).addEventListener("change", () => {
+      if (song) songRenderStep(false);
+    });
+  });
+
   async function loadSongList() {
     const res = await api("/api/songs");
     const sel = $("#song-select");
@@ -262,20 +275,26 @@
     const table = document.createElement("table");
     const head = document.createElement("tr");
     head.appendChild(document.createElement("th"));
-    for (let fret = 0; fret <= layout.max_fret; fret++) {
+    for (let fret = 1; fret <= layout.max_fret; fret++) {
       const th = document.createElement("th");
-      th.textContent = fret === 0 ? "open" : String(fret);
+      th.textContent = String(fret);
       head.appendChild(th);
     }
     table.appendChild(head);
 
     // Rows high string (G) on top to low string (E) on bottom.
+    // The string-label cell doubles as the open (fret 0) position.
     for (let row = layout.layout.length - 1; row >= 0; row--) {
       const tr = document.createElement("tr");
       const label = document.createElement("th");
       label.textContent = layout.string_labels[row];
+      label.dataset.string = String(row);
+      label.dataset.fret = "0";
+      if (opts && opts.onCellClick) {
+        label.addEventListener("click", () => opts.onCellClick(row, 0, label));
+      }
       tr.appendChild(label);
-      for (let fret = 0; fret <= layout.max_fret; fret++) {
+      for (let fret = 1; fret <= layout.max_fret; fret++) {
         const td = document.createElement("td");
         td.textContent = "\u00B7";
         td.dataset.string = String(row);
@@ -298,12 +317,20 @@
 
   function renderFretboardHelper(container, layout, positions) {
     const marked = new Set(positions.map((p) => `${p.string}:${p.fret}`));
+    // Other positions of the same pitch class (letter) are dimmed.
+    const pitchClasses = new Set(
+      positions.map((p) => layout.layout[p.string][p.fret].replace(/\d+$/, ""))
+    );
     const table = buildFretboardTable(layout, null);
-    table.querySelectorAll("td").forEach((td) => {
-      const key = `${td.dataset.string}:${td.dataset.fret}`;
+    table.querySelectorAll("[data-fret]").forEach((cell) => {
+      const note = layout.layout[cell.dataset.string][cell.dataset.fret];
+      const key = `${cell.dataset.string}:${cell.dataset.fret}`;
       if (marked.has(key)) {
-        td.classList.add("mark");
-        td.textContent = layout.layout[td.dataset.string][td.dataset.fret];
+        cell.classList.add("mark");
+        cell.textContent = note;
+      } else if (pitchClasses.has(note.replace(/\d+$/, ""))) {
+        cell.classList.add("alt");
+        cell.textContent = note;
       }
     });
     container.appendChild(table);
@@ -332,8 +359,8 @@
   }
 
   function fbReveal() {
-    document.querySelectorAll("#fb-grid td").forEach((td) => {
-      td.textContent = fbLayout.layout[td.dataset.string][td.dataset.fret];
+    document.querySelectorAll("#fb-grid [data-fret]").forEach((cell) => {
+      cell.textContent = fbLayout.layout[cell.dataset.string][cell.dataset.fret];
     });
   }
 
