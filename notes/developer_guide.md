@@ -34,9 +34,36 @@ uv run bass-practice --host 0.0.0.0 --port 8000
 ## Adding a song
 
 Drop a JSON file in `src/bass_practice/songs/` following the format in the
-README. Steps may be notes by `name` (`"A1"`) or by `string`/`fret`
+README. Steps may be notes by `name` (`"A2"`) or by `string`/`fret`
 (`{"string": 0, "fret": 5}`), or rests (`{"type": "rest"}`). The filename stem
 becomes the song ID.
+
+## Importing a tab PDF
+
+`tools/import_pdf.py` turns a *text-based* tab PDF (e.g. BassTabs.org export)
+into a song JSON. It extracts fret numbers by their coordinates and maps them to
+strings, grouping simultaneous notes into chords.
+
+```bash
+uv run python tools/import_pdf.py song.pdf --name "Song Name" --bpm 120 --out src/bass_practice/songs/song_name.json
+```
+
+Limitations: rhythm is flattened (our player is step-based), slides/technique
+markers are dropped, and multi-track tabs are collapsed into a single line.
+Always review the output. Scanned/handwritten PDFs won't work.
+
+## Importing a pasted ASCII tab
+
+`tools/import_tab_text.py` parses a pasted 4-line ASCII tab (both the labelled
+`G  :` style and Power Tab `|...|` style) into a song JSON:
+
+```bash
+uv run python tools/import_tab_text.py tab.txt --name "Song" --bpm 110 \
+    --out src/bass_practice/songs/song.json
+```
+
+It extracts fret numbers by column position and groups each 4-line system into
+time-ordered notes. As with the PDF importer, rhythm is flattened.
 
 ## Adding a domain feature
 

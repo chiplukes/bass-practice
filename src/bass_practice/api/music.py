@@ -8,12 +8,16 @@ from ..music import (
     INTERVALS,
     Fretboard,
     generate_deck,
+    generate_degree_exercise,
     generate_exercise,
     midi_to_note,
     note_to_midi,
     validate_interval,
 )
 from .schemas import (
+    DegreeQuestionInfo,
+    EarDegreesRequest,
+    EarDegreesResponse,
     EarExerciseRequest,
     EarExerciseResponse,
     FlashcardInfo,
@@ -107,6 +111,31 @@ def ear_exercise(req: EarExerciseRequest) -> EarExerciseResponse:
                 high_note=q.high_note,
                 low_frequency=q.low_frequency,
                 high_frequency=q.high_frequency,
+            )
+            for q in questions
+        ],
+    )
+
+
+@router.post("/ear/degrees", response_model=EarDegreesResponse)
+def ear_degrees(req: EarDegreesRequest) -> EarDegreesResponse:
+    """Generate a functional ear-training exercise of scale degrees in a key."""
+    root_midi = note_to_midi(req.root)
+    try:
+        questions = generate_degree_exercise(root_midi, req.degrees, req.count, seed=req.seed)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    return EarDegreesResponse(
+        root=req.root,
+        root_frequency=midi_to_note(root_midi).frequency,
+        questions=[
+            DegreeQuestionInfo(
+                degree=q.degree,
+                solfege=q.solfege,
+                semitones=q.semitones,
+                note=q.note,
+                midi=q.midi,
+                frequency=q.frequency,
             )
             for q in questions
         ],

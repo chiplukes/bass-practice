@@ -85,3 +85,22 @@ def test_ear_exercise() -> None:
 def test_ear_exercise_bad_interval() -> None:
     res = client.post("/api/ear/exercise", json={"intervals": ["bogus"], "root": "E2", "count": 1})
     assert res.status_code == 422
+
+
+def test_ear_degrees() -> None:
+    res = client.post(
+        "/api/ear/degrees",
+        json={"root": "C3", "degrees": [1, 3, 5], "count": 5, "seed": 3},
+    )
+    assert res.status_code == 200
+    body = res.json()
+    assert body["root"] == "C3"
+    assert body["root_frequency"] > 0
+    assert len(body["questions"]) == 5
+    assert all(q["degree"] in {1, 3, 5} for q in body["questions"])
+    assert all(q["frequency"] > 0 for q in body["questions"])
+
+
+def test_ear_degrees_bad_degree() -> None:
+    res = client.post("/api/ear/degrees", json={"root": "C3", "degrees": [99], "count": 1})
+    assert res.status_code == 422

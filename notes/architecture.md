@@ -62,7 +62,7 @@ src/bass_practice/
 2. The API routers translate HTTP into calls to `music/` and return Pydantic
    models serialized as JSON.
 3. The frontend renders the data and drives timing via `setTimeout` loops,
-   calling `BassAudio.playMidi(midi)` to synthesize each note.
+   calling `BassAudio.playTone(frequency)` to synthesize each note.
 
 The domain package `music/` imports nothing from `api/`, `catalog.py`, or
 FastAPI, which is what keeps it unit-testable in isolation.
@@ -73,10 +73,12 @@ FastAPI, which is what keeps it unit-testable in isolation.
   with a short attack/release envelope from a MIDI number. This gives instant
   playback of any pitch with zero assets. Real samples can be layered in later
   without changing the API (the frequency/MIDI contract stays the same).
-- **Pre-resolved steps.** `tab.py` turns raw song steps (which may be notes by
-  name or by string/fret, or rests) into `ResolvedStep` objects carrying
-  `midi`, `frequency`, `note_name`, and a `display` label. The frontend never
-  parses music notation.
+- **Pre-resolved steps.** `tab.py` turns raw song steps into `ResolvedStep`
+  objects carrying a `notes` list (one note, several for a chord, empty for a
+  rest), each with `midi`, `frequency`, `note_name`, and a `display` label. Song
+  steps may be notes (by name or string/fret), chords, rests, or repeated
+  `phrase` blocks; `resolve_song` flattens phrases and produces a flat playable
+  sequence. The frontend never parses music notation.
 - **Vendored engraving.** Standard notation is rendered client-side with VexFlow
   5, vendored under `static/vendor/` along with its fonts so the app works fully
   offline. Tablature is a small custom renderer (four lines + a fret number) in

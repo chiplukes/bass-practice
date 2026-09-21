@@ -1,27 +1,34 @@
-/* Web Audio bass synthesizer. */
+/* Web Audio bass synthesizer with a global mute toggle. */
 (function () {
   "use strict";
 
   let ctx = null;
+  let enabled = true;
+
+  try {
+    enabled = localStorage.getItem("bass.sound") !== "off";
+  } catch (e) {
+    enabled = true;
+  }
 
   function ensureContext() {
     if (!ctx) {
       const AC = window.AudioContext || window.webkitAudioContext;
       ctx = new AC();
     }
-    if (ctx.state === "suspended") {
-      ctx.resume();
-    }
     return ctx;
   }
 
-  /**
-   * Play a tone at a given frequency in Hz.
-   * opts: { when=0, duration=0.8, wave='triangle', volume=0.5 }
-   */
-  function playTone(freq, opts) {
-    const o = opts || {};
+  function unlock() {
     const c = ensureContext();
+    if (c.state === "suspended") {
+      c.resume();
+    }
+    return c;
+  }
+
+  function schedule(c, freq, opts) {
+    const o = opts || {};
     const t0 = c.currentTime + (o.when || 0);
     const duration = o.duration || 0.8;
     const volume = o.volume == null ? 0.5 : o.volume;
@@ -44,9 +51,33 @@
     osc.stop(end + release);
   }
 
-  function unlock() {
-    ensureContext();
+  function playTone(freq, opts) {
+    if (!enabled || !freq || freq <= 0) {
+      return;
+    }
+    const c = ensureContext();
+    if (c.state === "suspended") {
+      // Schedule only after resume completes (fixes first-gesture race).
+      c.resume()
+        .then(() => schedule(c, freq, opts))
+        .catch(() => {});
+    } else {
+      schedule(c, freq, opts);
+    }
   }
 
-  window.BassAudio = { unlock, playTone };
+  function setEnabled(value) {
+    enabled = !!value;
+    try {
+      localStorage.setItem("bass.sound", enabled ? "on" : "off");
+    } catch (e) {
+      /* ignore */
+    }
+  }
+
+  function isEnabled() {
+    return enabled;
+  }
+
+  window.BassAudio = { unlock, playTone, setEnabled, isEnabled };
 })();

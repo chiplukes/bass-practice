@@ -24,9 +24,10 @@
     return m[1].toLowerCase() + m[2] + "/" + m[3];
   }
 
-  // Render a single note on a bass-clef stave.
-  function renderNote(container, name) {
+  // Render one or more notes (a chord when more than one) on a bass-clef stave.
+  function renderNote(container, names) {
     const { Renderer, Stave, StaveNote, Voice, Formatter } = VexFlow;
+    const keys = names.map(vexKey);
     const div = document.createElement("div");
     div.className = "notation";
     container.appendChild(div);
@@ -39,17 +40,21 @@
     stave.addClef("bass");
     stave.setContext(ctx).draw();
 
-    const note = new StaveNote({ keys: [vexKey(name)], duration: "q", clef: "bass", auto_stem: true });
+    const note = new StaveNote({ keys: keys, duration: "q", clef: "bass", auto_stem: true });
     const voice = new Voice({ numBeats: 1, beatValue: 4 });
     voice.addTickable(note);
     new Formatter().joinVoices([voice]).format([voice], 150);
     voice.draw(ctx, stave);
   }
 
-  // Render a 4-line bass tab with the fret number on the correct string.
-  // string: 0 = E (lowest) .. 3 = G (highest).
-  function renderTab(container, string, fret) {
+  // Render a 4-line bass tab, marking one or more string positions.
+  // positions: [{ string: 0..3, fret: number }]  (0 = E lowest, 3 = G highest)
+  function renderTab(container, positions) {
     const labels = ["E", "A", "D", "G"];
+    const byString = {};
+    positions.forEach((p) => {
+      byString[p.string] = p.fret;
+    });
     const wrap = document.createElement("div");
     wrap.className = "tab";
     for (let s = 3; s >= 0; s--) {
@@ -61,10 +66,10 @@
       row.appendChild(label);
       const line = document.createElement("span");
       line.className = "tab-line";
-      if (s === string) {
+      if (s in byString) {
         const num = document.createElement("span");
         num.className = "tab-fret";
-        num.textContent = String(fret);
+        num.textContent = String(byString[s]);
         line.appendChild(num);
       }
       row.appendChild(line);

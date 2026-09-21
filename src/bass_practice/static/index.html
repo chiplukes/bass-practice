@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>bass practice</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css?v=3" />
 </head>
 <body>
   <header>
@@ -15,6 +15,10 @@
       <button class="tab" data-view="fretboard">Fretboard</button>
       <button class="tab" data-view="ear">Ear trainer</button>
     </nav>
+    <div class="sound">
+      <label><input id="sound-toggle" type="checkbox" checked /> sound</label>
+      <button id="sound-test" class="ghost">Test</button>
+    </div>
   </header>
 
   <main>
@@ -36,7 +40,7 @@
         <label><input id="fc-show-fretboard" type="checkbox" /> fretboard</label>
         <button id="fc-toggle">Start</button>
       </div>
-      <div class="fc-card">
+      <div class="study-card">
         <div id="fc-note-name" class="note-name"></div>
         <div id="fc-notation"></div>
         <div id="fc-tab"></div>
@@ -63,7 +67,18 @@
           <input id="song-speed" type="number" min="0.25" step="0.25" value="1" />
         </label>
       </div>
-      <div id="song-display" class="card">Load a song to begin</div>
+      <div class="controls">
+        <label><input id="song-show-note" type="checkbox" checked /> note</label>
+        <label><input id="song-show-tab" type="checkbox" checked /> tab</label>
+        <label><input id="song-show-notation" type="checkbox" checked /> notation</label>
+        <label><input id="song-show-fretboard" type="checkbox" /> fretboard</label>
+      </div>
+      <div class="study-card">
+        <div id="song-note-name" class="note-name"></div>
+        <div id="song-notation"></div>
+        <div id="song-tab"></div>
+        <div id="song-fretboard-helper" class="fretboard"></div>
+      </div>
       <div id="song-progress" class="muted"></div>
     </section>
 
@@ -79,19 +94,19 @@
 
     <section id="view-ear" class="view">
       <div class="controls">
-        <label>root
+        <label>key
           <select id="ear-root"></select>
         </label>
         <label>count
           <input id="ear-count" type="number" min="1" step="1" value="8" />
         </label>
-        <label><input id="ear-desc" type="checkbox" /> descending</label>
         <button id="ear-new">New exercise</button>
-        <button id="ear-play">Play</button>
+        <button id="ear-play-key">Play key</button>
+        <button id="ear-play">Play note</button>
         <span id="ear-score" class="muted"></span>
       </div>
-      <fieldset id="ear-intervals" class="intervals">
-        <legend>intervals</legend>
+      <fieldset id="ear-degrees" class="intervals">
+        <legend>scale degrees</legend>
       </fieldset>
       <div id="ear-question" class="card">Create an exercise to begin</div>
       <div id="ear-answers" class="answers"></div>
@@ -102,9 +117,9 @@
     Served by bass-practice. Audio is synthesized in your browser.
   </footer>
 
-  <script src="/vendor/vexflow.js"></script>
-  <script src="/audio.js"></script>
-  <script src="/notation.js"></script>
-  <script src="/app.js"></script>
+  <script src="/vendor/vexflow.js?v=3"></script>
+  <script src="/audio.js?v=3"></script>
+  <script src="/notation.js?v=3"></script>
+  <script src="/app.js?v=3"></script>
 </body>
 </html>

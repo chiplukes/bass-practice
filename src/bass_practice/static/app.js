@@ -48,8 +48,57 @@
     });
   });
 
-  // Unlock audio on the first user gesture.
-  document.addEventListener("click", () => BassAudio.unlock(), { once: true });
+  // ------------------------------------------------------------------
+  // sound toggle
+  // ------------------------------------------------------------------
+  const soundToggle = $("#sound-toggle");
+  soundToggle.checked = BassAudio.isEnabled();
+  soundToggle.addEventListener("change", () => BassAudio.setEnabled(soundToggle.checked));
+  $("#sound-test").addEventListener("click", () => {
+    BassAudio.unlock();
+    BassAudio.playTone(440.0, { duration: 0.6 });
+  });
+
+  // Unlock audio on every pointer gesture (cheap when already running).
+  document.addEventListener("pointerdown", () => BassAudio.unlock());
+
+  // ------------------------------------------------------------------
+  // shared study-card rendering (note/tab/notation/fretboard)
+  // ------------------------------------------------------------------
+  function renderStudy({ prefix, noteNames, tabPositions, fretboardPositions, show }) {
+    const noteEl = $(`#${prefix}-note-name`);
+    const tabEl = $(`#${prefix}-tab`);
+    const notEl = $(`#${prefix}-notation`);
+    const fbEl = $(`#${prefix}-fretboard-helper`);
+
+    noteEl.style.display = show.note ? "" : "none";
+    tabEl.style.display = show.tab ? "" : "none";
+    notEl.style.display = show.notation ? "" : "none";
+    fbEl.style.display = show.fretboard ? "" : "none";
+
+    if (show.note) noteEl.textContent = noteNames.length ? noteNames.join(" + ") : "rest";
+    if (show.notation && noteNames.length) {
+      notEl.innerHTML = "";
+      Notation.renderNote(notEl, noteNames);
+    }
+    if (show.tab && tabPositions.length) {
+      tabEl.innerHTML = "";
+      Notation.renderTab(tabEl, tabPositions);
+    }
+    if (show.fretboard && fbLayout && fretboardPositions.length) {
+      fbEl.innerHTML = "";
+      renderFretboardHelper(fbEl, fbLayout, fretboardPositions);
+    }
+  }
+
+  function studyShow(prefix) {
+    return {
+      note: $(`#${prefix}-show-note`).checked,
+      tab: $(`#${prefix}-show-tab`).checked,
+      notation: $(`#${prefix}-show-notation`).checked,
+      fretboard: $(`#${prefix}-show-fretboard`).checked,
+    };
+  }
 
   // ------------------------------------------------------------------
   // flashcards
@@ -59,32 +108,13 @@
   let fcCards = [];
 
   function fcRender(card) {
-    const showNote = $("#fc-show-note").checked;
-    const showTab = $("#fc-show-tab").checked;
-    const showNotation = $("#fc-show-notation").checked;
-    const showFretboard = $("#fc-show-fretboard").checked;
-
-    $("#fc-note-name").style.display = showNote ? "" : "none";
-    $("#fc-notation").style.display = showNotation ? "" : "none";
-    $("#fc-tab").style.display = showTab ? "" : "none";
-    $("#fc-fretboard-helper").style.display = showFretboard ? "" : "none";
-
-    if (showNote) $("#fc-note-name").textContent = card.name;
-    if (showNotation) {
-      const el = $("#fc-notation");
-      el.innerHTML = "";
-      Notation.renderNote(el, card.name);
-    }
-    if (showTab) {
-      const el = $("#fc-tab");
-      el.innerHTML = "";
-      Notation.renderTab(el, card.string, card.fret);
-    }
-    if (showFretboard && fbLayout) {
-      const el = $("#fc-fretboard-helper");
-      el.innerHTML = "";
-      renderFretboardHelper(el, fbLayout, card.positions);
-    }
+    renderStudy({
+      prefix: "fc",
+      noteNames: [card.name],
+      tabPositions: [{ string: card.string, fret: card.fret }],
+      fretboardPositions: card.positions,
+      show: studyShow("fc"),
+    });
   }
 
   function fcRenderIdle() {
@@ -137,18 +167,35 @@
     return (60000 / (bpm * speed)) / 1000; // seconds
   }
 
+  function setSongPlaying(playing) {
+    songPlaying = playing;
+    $("#song-play").textContent = playing ? "Pause" : "Play";
+  }
+
   function songRenderStep() {
     const step = song.steps[songIdx];
-    $("#song-display").textContent = step.display;
+    const positions = step.notes
+      .filter((n) => n.string != null && n.fret != null)
+      .map((n) => ({ string: n.string, fret: n.fret }));
+    renderStudy({
+      prefix: "song",
+      noteNames: step.notes.map((n) => n.note_name),
+      tabPositions: positions,
+      fretboardPositions: positions,
+      show: studyShow("song"),
+    });
     $("#song-progress").textContent = `step ${songIdx + 1} / ${song.steps.length}`;
-    if (step.kind === "note") {
-      BassAudio.playTone(step.frequency, { duration: Math.max(0.4, songStepDuration()) });
-    }
+    const duration = Math.max(0.4, songStepDuration());
+    step.notes.forEach((n) => BassAudio.playTone(n.frequency, { duration }));
   }
 
   async function songLoop() {
     while (songPlaying && song) {
-      songRenderStep();
+      try {
+        songRenderStep();
+      } catch (e) {
+        console.error(e);
+      }
       await sleep(songStepDuration() * 1000);
       songIdx = (songIdx + 1) % song.steps.length;
     }
@@ -156,26 +203,26 @@
 
   $("#song-play").addEventListener("click", () => {
     if (!song) return;
-    if (!songPlaying) {
-      songPlaying = true;
+    if (songPlaying) {
+      setSongPlaying(false);
+    } else {
+      setSongPlaying(true);
       songLoop();
     }
   });
 
-  $("#song-stop").addEventListener("click", () => {
-    songPlaying = false;
-  });
+  $("#song-stop").addEventListener("click", () => setSongPlaying(false));
 
   $("#song-prev").addEventListener("click", () => {
     if (!song) return;
-    songPlaying = false;
+    setSongPlaying(false);
     songIdx = (songIdx - 1 + song.steps.length) % song.steps.length;
     songRenderStep();
   });
 
   $("#song-next").addEventListener("click", () => {
     if (!song) return;
-    songPlaying = false;
+    setSongPlaying(false);
     songIdx = (songIdx + 1) % song.steps.length;
     songRenderStep();
   });
@@ -183,7 +230,7 @@
   $("#song-load").addEventListener("click", async () => {
     song = await api(`/api/songs/${$("#song-select").value}`);
     songIdx = 0;
-    songPlaying = false;
+    setSongPlaying(false);
     songRenderStep();
   });
 
@@ -300,24 +347,24 @@
   }
 
   // ------------------------------------------------------------------
-  // ear trainer
+  // ear trainer (functional: scale degrees in a key)
   // ------------------------------------------------------------------
-  let exercise = null;
+  const DEGREE_LABELS = { 1: "Do", 2: "Re", 3: "Mi", 4: "Fa", 5: "So", 6: "La", 7: "Ti" };
+  let earExercise = null;
   let earIdx = 0;
   let earCorrect = 0;
 
-  async function loadEarIntervals() {
-    const intervals = await api("/api/intervals");
-    const box = $("#ear-intervals");
+  async function loadEarDegrees() {
+    const box = $("#ear-degrees");
     box.innerHTML = "";
-    intervals.forEach((name) => {
+    Object.keys(DEGREE_LABELS).forEach((d) => {
       const label = document.createElement("label");
       const cb = document.createElement("input");
       cb.type = "checkbox";
-      cb.value = name;
-      cb.checked = name !== "unison";
+      cb.value = d;
+      cb.checked = true;
       label.appendChild(cb);
-      label.appendChild(document.createTextNode(" " + name));
+      label.appendChild(document.createTextNode(` ${d} ${DEGREE_LABELS[d]}`));
       box.appendChild(label);
     });
   }
@@ -335,28 +382,28 @@
     });
   }
 
-  function selectedIntervals() {
-    return Array.from(document.querySelectorAll("#ear-intervals input:checked")).map((cb) => cb.value);
+  function selectedDegrees() {
+    return Array.from(document.querySelectorAll("#ear-degrees input:checked")).map((cb) => parseInt(cb.value, 10));
   }
 
   function earShowQuestion() {
-    const q = exercise.questions[earIdx];
-    $("#ear-question").textContent = `Question ${earIdx + 1} / ${exercise.questions.length}`;
+    const q = earExercise.questions[earIdx];
+    $("#ear-question").textContent = `Question ${earIdx + 1} / ${earExercise.questions.length} (key of ${earExercise.root})`;
     const answers = $("#ear-answers");
     answers.innerHTML = "";
-    const names = Array.from(new Set(exercise.questions.map((x) => x.interval)));
-    names.forEach((name) => {
+    const degrees = Array.from(new Set(earExercise.questions.map((x) => x.degree)));
+    degrees.forEach((d) => {
       const btn = document.createElement("button");
-      btn.textContent = name;
-      btn.addEventListener("click", () => earAnswer(name, btn));
+      btn.textContent = `${DEGREE_LABELS[d]} (${d})`;
+      btn.addEventListener("click", () => earAnswer(d, btn));
       answers.appendChild(btn);
     });
     $("#ear-score").textContent = `${earCorrect} correct`;
   }
 
-  function earAnswer(name, btn) {
-    const q = exercise.questions[earIdx];
-    if (name === q.interval) {
+  function earAnswer(degree, btn) {
+    const q = earExercise.questions[earIdx];
+    if (degree === q.degree) {
       earCorrect++;
       btn.classList.add("correct");
     } else {
@@ -365,7 +412,7 @@
     $("#ear-score").textContent = `${earCorrect} correct`;
     setTimeout(() => {
       earIdx++;
-      if (earIdx >= exercise.questions.length) {
+      if (earIdx >= earExercise.questions.length) {
         $("#ear-question").textContent = "Exercise complete";
         $("#ear-answers").innerHTML = "";
       } else {
@@ -374,34 +421,38 @@
     }, 600);
   }
 
-  function earPlay() {
-    if (!exercise) return;
-    const q = exercise.questions[earIdx];
-    BassAudio.playTone(q.low_frequency, { duration: 0.6 });
-    setTimeout(() => BassAudio.playTone(q.high_frequency, { duration: 0.6 }), 550);
+  function earPlayKey() {
+    if (!earExercise) return;
+    BassAudio.playTone(earExercise.root_frequency, { duration: 1.2 });
+  }
+
+  function earPlayNote() {
+    if (!earExercise) return;
+    const q = earExercise.questions[earIdx];
+    BassAudio.playTone(q.frequency, { duration: 1.2 });
   }
 
   $("#ear-new").addEventListener("click", async () => {
-    const intervals = selectedIntervals();
-    if (intervals.length === 0) return;
-    exercise = await apiPost("/api/ear/exercise", {
-      intervals: intervals,
+    const degrees = selectedDegrees();
+    if (!degrees.length) return;
+    earExercise = await apiPost("/api/ear/degrees", {
       root: $("#ear-root").value,
+      degrees: degrees,
       count: parseInt($("#ear-count").value, 10),
-      descending: $("#ear-desc").checked,
     });
     earIdx = 0;
     earCorrect = 0;
     earShowQuestion();
   });
 
-  $("#ear-play").addEventListener("click", earPlay);
+  $("#ear-play-key").addEventListener("click", earPlayKey);
+  $("#ear-play").addEventListener("click", earPlayNote);
 
   // ------------------------------------------------------------------
   // boot
   // ------------------------------------------------------------------
   async function boot() {
-    await Promise.all([loadSongList(), loadFretboard(), loadEarIntervals(), loadEarRoots()]);
+    await Promise.all([loadSongList(), loadFretboard(), loadEarDegrees(), loadEarRoots()]);
   }
 
   boot();

@@ -33,12 +33,20 @@ class FlashcardsResponse(BaseModel):
     cards: list[FlashcardInfo]
 
 
+class StepNoteInfo(BaseModel):
+    note_name: str
+    midi: int
+    frequency: float
+    string: int | None = None
+    fret: int | None = None
+    technique: str | None = None
+
+
 class StepInfo(BaseModel):
     kind: str
     display: str
-    midi: int | None = None
-    frequency: float | None = None
-    note_name: str | None = None
+    technique: str | None = None
+    notes: list[StepNoteInfo] = []
 
 
 class SongSummary(BaseModel):
@@ -87,3 +95,25 @@ class IntervalQuestionInfo(BaseModel):
 class EarExerciseResponse(BaseModel):
     root: str
     questions: list[IntervalQuestionInfo]
+
+
+class EarDegreesRequest(BaseModel):
+    root: str = "E2"
+    degrees: list[int] = [1, 2, 3, 4, 5, 6, 7]
+    count: int = 8
+    seed: int | None = None
+
+
+class DegreeQuestionInfo(BaseModel):
+    degree: int
+    solfege: str
+    semitones: int
+    note: str
+    midi: int
+    frequency: float
+
+
+class EarDegreesResponse(BaseModel):
+    root: str
+    root_frequency: float
+    questions: list[DegreeQuestionInfo]

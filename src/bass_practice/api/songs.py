@@ -2,13 +2,11 @@
 
 from __future__ import annotations
 
-from dataclasses import asdict
-
 from fastapi import APIRouter, HTTPException
 
 from ..catalog import list_song_ids, load_song
 from ..music import DEFAULT_TUNING, resolve_song
-from .schemas import SongDetail, SongsResponse, SongSummary, StepInfo
+from .schemas import SongDetail, SongsResponse, SongSummary, StepInfo, StepNoteInfo
 
 router = APIRouter(prefix="/songs", tags=["songs"])
 
@@ -27,7 +25,7 @@ def list_songs() -> SongsResponse:
                 name=song["name"],
                 description=song.get("description", ""),
                 bpm=song.get("bpm", 120),
-                step_count=len(song.get("steps", [])),
+                step_count=len(resolve_song(song)),
             )
         )
     return SongsResponse(songs=summaries)
@@ -39,7 +37,25 @@ def get_song(song_id: str) -> SongDetail:
     song = load_song(song_id)
     if song is None:
         raise HTTPException(status_code=404, detail=f"Unknown song: {song_id}")
-    steps = [StepInfo(**asdict(step)) for step in resolve_song(song)]
+    steps = [
+        StepInfo(
+            kind=s.kind,
+            display=s.display,
+            technique=s.technique,
+            notes=[
+                StepNoteInfo(
+                    note_name=n.note_name,
+                    midi=n.midi,
+                    frequency=n.frequency,
+                    string=n.string,
+                    fret=n.fret,
+                    technique=n.technique,
+                )
+                for n in s.notes
+            ],
+        )
+        for s in resolve_song(song)
+    ]
     return SongDetail(
         id=song_id,
         name=song["name"],

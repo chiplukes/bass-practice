@@ -1,0 +1,3684 @@
+{
+  "name": "Hysteria",
+  "description": "Muse \u2014 bass by Chris Wolstenholme (Absolution). Tab by Ed Evans.",
+  "bpm": 92,
+  "tuning": [
+    "E2",
+    "A2",
+    "D3",
+    "G3"
+  ],
+  "steps": [
+    {
+      "type": "phrase",
+      "repeat": 5,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 17
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 1,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 17
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 1,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "p"
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 1,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 17
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 2,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 17
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 1,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 17
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 1,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "p"
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 1,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 17
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 1,
+      "steps": [
+        {
+          "type": "phrase",
+          "repeat": 3,
+          "steps": [
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 0
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 0
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 10
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 0
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 10
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 12
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 0
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 10
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 10
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 9
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 0
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 9
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 8
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 0
+            },
+            {
+              "type": "note",
+              "string": 0,
+              "fret": 8
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 17
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 1,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 17
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 1,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 15
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 17
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 7
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 3,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "p"
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 1,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 7,
+          "technique": "h"
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 5,
+          "technique": "p"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5,
+          "technique": "/"
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5,
+          "technique": "\\"
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 6,
+      "steps": [
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 12
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 10
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 9
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 8
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 8
+        }
+      ]
+    }
+  ]
+}

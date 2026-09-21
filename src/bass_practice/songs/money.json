@@ -1,0 +1,541 @@
+{
+  "name": "Money",
+  "description": "Pink Floyd \u2014 bass tab.",
+  "bpm": 126,
+  "tuning": [
+    "E2",
+    "A2",
+    "D3",
+    "G3"
+  ],
+  "steps": [
+    {
+      "type": "phrase",
+      "repeat": 4,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 1,
+      "steps": [
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 0
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 8,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 4,
+      "steps": [
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 3
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 4,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 2,
+      "steps": [
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 3
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 1,
+      "steps": [
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 5
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        }
+      ]
+    },
+    {
+      "type": "phrase",
+      "repeat": 2,
+      "steps": [
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 0,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 4
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 1,
+          "fret": 3
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 0
+        },
+        {
+          "type": "note",
+          "string": 2,
+          "fret": 2
+        },
+        {
+          "type": "note",
+          "string": 3,
+          "fret": 0
+        }
+      ]
+    }
+  ]
+}

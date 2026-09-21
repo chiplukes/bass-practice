@@ -49,10 +49,21 @@ Songs are JSON documents in `src/bass_practice/songs/`. A step is either a note
   "steps": [
     { "type": "note", "string": 0, "fret": 0 },
     { "type": "note", "name": "A2" },
+    { "type": "note", "string": 2, "fret": 2, "technique": "h" },
+    { "type": "chord", "notes": [{ "string": 0, "fret": 6 }, { "string": 1, "fret": 4 }] },
+    { "type": "phrase", "repeat": 4, "steps": [ { "type": "note", "string": 1, "fret": 2 } ] },
     { "type": "rest" }
   ]
 }
 ```
+
+Supported step types:
+
+- `note` by `name` or by `string`/`fret` (optional `technique` label: `"h"`,
+  `"~"`, `"slide"`, `"p"`, ...).
+- `chord` — simultaneous notes (`notes` list), played together.
+- `phrase` — repeat a sub-sequence `repeat` times.
+- `rest`.
 
 Notes follow standard bass notation: the bass is a transposing instrument, so
 pitches are written an octave higher than they sound (open E is written `E2` but
