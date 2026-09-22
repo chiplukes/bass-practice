@@ -104,9 +104,17 @@
   // flashcards
   // ------------------------------------------------------------------
   const fcToggle = $("#fc-toggle");
+  const fcPauseBtn = $("#fc-pause");
   let fcRunning = false;
+  let fcPaused = false;
   let fcCards = [];
   let fcToken = 0;
+
+  async function fcWaitIfPaused(token) {
+    while (fcPaused && fcRunning && token === fcToken) {
+      await sleep(100);
+    }
+  }
 
   function fcRender(card) {
     renderStudy({
@@ -129,7 +137,10 @@
   async function fcRun() {
     const token = ++fcToken;
     fcRunning = true;
+    fcPaused = false;
     fcToggle.textContent = "Stop";
+    fcPauseBtn.disabled = false;
+    fcPauseBtn.textContent = "Pause";
     await Notation.ready;
     const [start, end] = $("#fc-range").value.split("|");
     const res = await api(`/api/flashcards?start=${start}&end=${end}&max_fret=12`);
@@ -139,23 +150,37 @@
       const card = fcCards[i % fcCards.length];
       i++;
       fcRender(card);
+      await fcWaitIfPaused(token);
       const secs = parseFloat($("#fc-seconds").value);
       await sleep((Number.isFinite(secs) && secs > 0 ? secs : 2) * 1000);
       if (!fcRunning || token !== fcToken) break;
+      await fcWaitIfPaused(token);
       BassAudio.playTone(card.frequency, { duration: 1.0 });
       await sleep(400);
     }
+    fcPauseBtn.disabled = true;
+    fcPauseBtn.textContent = "Pause";
+    fcPaused = false;
   }
 
   fcToggle.addEventListener("click", () => {
     if (fcRunning) {
       fcRunning = false;
+      fcPaused = false;
       fcToken++;
       fcToggle.textContent = "Start";
+      fcPauseBtn.disabled = true;
+      fcPauseBtn.textContent = "Pause";
       fcRenderIdle();
     } else {
       fcRun();
     }
+  });
+
+  fcPauseBtn.addEventListener("click", () => {
+    if (!fcRunning) return;
+    fcPaused = !fcPaused;
+    fcPauseBtn.textContent = fcPaused ? "Resume" : "Pause";
   });
 
   // ------------------------------------------------------------------
@@ -195,6 +220,15 @@
     }
   }
 
+  function songLoopBounds() {
+    const total = song.steps.length;
+    const startVal = parseInt($("#song-loop-start").value, 10);
+    const endVal = parseInt($("#song-loop-end").value, 10);
+    const start = isNaN(startVal) ? 0 : Math.max(0, Math.min(startVal - 1, total - 1));
+    const end = isNaN(endVal) ? total - 1 : Math.max(start, Math.min(endVal - 1, total - 1));
+    return { start, end };
+  }
+
   async function songLoop() {
     while (songPlaying && song) {
       try {
@@ -203,7 +237,8 @@
         console.error(e);
       }
       await sleep(songStepDuration() * 1000);
-      songIdx = (songIdx + 1) % song.steps.length;
+      const { start, end } = songLoopBounds();
+      songIdx = songIdx >= end ? start : songIdx + 1;
     }
   }
 
@@ -212,6 +247,8 @@
     if (songPlaying) {
       setSongPlaying(false);
     } else {
+      const { start, end } = songLoopBounds();
+      if (songIdx < start || songIdx > end) songIdx = start;
       setSongPlaying(true);
       songLoop();
     }
@@ -222,14 +259,16 @@
   $("#song-prev").addEventListener("click", () => {
     if (!song) return;
     setSongPlaying(false);
-    songIdx = (songIdx - 1 + song.steps.length) % song.steps.length;
+    const { start, end } = songLoopBounds();
+    songIdx = songIdx <= start ? end : songIdx - 1;
     songRenderStep();
   });
 
   $("#song-next").addEventListener("click", () => {
     if (!song) return;
     setSongPlaying(false);
-    songIdx = (songIdx + 1) % song.steps.length;
+    const { start, end } = songLoopBounds();
+    songIdx = songIdx >= end ? start : songIdx + 1;
     songRenderStep();
   });
 

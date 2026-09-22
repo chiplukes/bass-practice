@@ -39,11 +39,14 @@
         <label><input id="fc-show-notation" type="checkbox" checked /> notation</label>
         <label><input id="fc-show-fretboard" type="checkbox" /> fretboard</label>
         <button id="fc-toggle">Start</button>
+        <button id="fc-pause" disabled>Pause</button>
       </div>
       <div class="study-card">
-        <div id="fc-note-name" class="note-name"></div>
-        <div id="fc-notation"></div>
-        <div id="fc-tab"></div>
+        <div class="study-card-panels">
+          <div id="fc-note-name" class="note-name"></div>
+          <div id="fc-notation"></div>
+          <div id="fc-tab"></div>
+        </div>
         <div id="fc-fretboard-helper" class="fretboard"></div>
       </div>
     </section>
@@ -66,6 +69,12 @@
         <label>speed
           <input id="song-speed" type="number" min="0.25" step="0.25" value="1" />
         </label>
+        <label>loop from note
+          <input id="song-loop-start" type="number" min="1" step="1" placeholder="1" style="width:4em" />
+        </label>
+        <label>to
+          <input id="song-loop-end" type="number" min="1" step="1" placeholder="end" style="width:4em" />
+        </label>
       </div>
       <div class="controls">
         <label><input id="song-show-note" type="checkbox" checked /> note</label>
@@ -74,9 +83,11 @@
         <label><input id="song-show-fretboard" type="checkbox" /> fretboard</label>
       </div>
       <div class="study-card">
-        <div id="song-note-name" class="note-name"></div>
-        <div id="song-notation"></div>
-        <div id="song-tab"></div>
+        <div class="study-card-panels">
+          <div id="song-note-name" class="note-name"></div>
+          <div id="song-notation"></div>
+          <div id="song-tab"></div>
+        </div>
         <div id="song-fretboard-helper" class="fretboard"></div>
       </div>
       <div id="song-progress" class="muted"></div>

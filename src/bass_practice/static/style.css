@@ -158,6 +158,16 @@ button:hover {
   color: #1a1d23;
 }
 
+.study-card-panels {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .note-name {
   font-size: 3rem;
   font-weight: 700;
